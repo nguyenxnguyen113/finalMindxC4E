@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato|Raleway");
+         :root {
+            --progress-width: 100%;
+            --progress-height: 8px;
+            --progress-bar-color: rgb(115, 0, 209);
+            --progress-bg: none;
+            --progress-border-radius: 5px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: Raleway;
+        }
+        
+        .home {
+            padding: 20px;
+            font-size: 2em;
+        }
+        /*BEGIN progress */
+        
+        progress {
+            position: -moz-sticky;
+            position: -ms-sticky;
+            position: -o-sticky;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        /*Target this for applying styles*/
+        
+        progress[value] {
+            /* Reset the default appearance */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* Get rid of default border in Firefox. */
+            border: none;
+            width: var(--progress-width);
+            height: var(--progress-height);
+            /* Firefox: any style applied here applies to the container. */
+            background-color: var(--progress-bg);
+            border-radius: var(--progress-border-radius);
+            /* For IE10 */
+            color: var(--progress-bar-color);
+        }
+        /* For Firefox: progress bar */
+        
+        progress[value]::-moz-progress-bar {
+            background-color: var(--progress-bar-color);
+            border-radius: var(--progress-border-radius);
+        }
+        /* WebKit/Blink browsers:
+    -webkit-progress-bar is to style the container */
+        
+        progress[value]::-webkit-progress-bar {
+            background-color: var(--progress-bg);
+            border-radius: var(--progress-border-radius);
+        }
+        /*-webkit-progress-value is to style the progress bar.*/
+        
+        progress[value]::-webkit-progress-value {
+            background-color: var(--progress-bar-color);
+            border-radius: var(--progress-border-radius);
+        }
+        /* END progress bar */
+        
+        main {
+            margin: 0 20px;
+        }
+        
+        #post header {
+            display: grid;
+            grid-template-columns: 50px 1fr auto;
+            grid-template-rows: auto 30px auto;
+            align-items: center;
+            grid-gap: 10px;
+            margin-bottom: 100px;
+            width: 100%;
+        }
+        
+        .headline {
+            font-family: Raleway;
+            font-size: 2.25em;
+            line-height: 1.25em;
+            grid-column: 1 / -1;
+        }
+        
+        .follow-btn {
+            background: none;
+            border: 1px black solid;
+            border-radius: 3px;
+            padding: 2px 5px;
+        }
+        
+        .author-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            grid-row: 2 / -1;
+        }
+        
+        .social i {
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        
+        #post .reading-time {
+            color: var(--progress-bar-color);
+            font-weight: 600;
+            justify-self: end;
+        }
+        
+        article img {
+            width: 100%;
+        }
+        
+        a,
+        a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+        /*recommended articles*/
+        
+        .recommended-articles ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        .recommended-articles ul li {
+            display: inline-block;
+            border: 1px grey dashed;
+            min-width: 250px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 10px;
+        }
+        
+        .article-img,
+        .article-title {
+            grid-column: span 1;
+        }
+        
+        .article-img {
+            width: 100px;
+        }
+        
+        .article-img img {
+            width: inherit;
+        }
+        
+        .article-title h2 {
+            text-overflow: ellipsis;
+            padding: 0 5px;
+            font-size: 1.2em;
+        }
+        
+        .recommended-articles span {
+            padding: 0 5px;
+            font-size: 0.8em;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .recommended-articles .reading-time {
+            justify-self: end;
+        }
+        /*footer*/
+        
+        .pledge {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 10px;
+            margin: 10px 20px;
+        }
+        
+        @media screen and (min-width: 1000px) {
+            main {
+                margin: 0 20%;
+            }
+            .recommended-articles ul {
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 20px;
+            }
+            .recommended-articles ul li {
+                min-width: 250px;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto 4em auto;
+                grid-gap: 10px;
+            }
+            .article-img,
+            .article-title {
+                grid-column: span 2;
+            }
+            .article-img {
+                width: 150px;
+                justify-self: center;
+                align-self: center;
+            }
+            .article-img img {
+                width: inherit;
+            }
+            .pledge {
+                grid-template-rows: auto;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <ul class="top-nav__list-item">
+                            <li>
+                                <a href="index.html"><img src="./image/elephant.svg" alt=""></a>
+                            </li>
+                            <li><a href="/Volumes/GocInfo/C4E 72/StressProject-video/videoIndex.html">clip</a></li>
+                            <li><a href="music.html">Music</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <!-- <li class="top-nav__list-item"></li> -->
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="top-nav__search">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fas fa-search"></i></ibutton>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="content">
+        <article id="post">
+            <progress id="reading-progress" max="100" value="0"></progress>
+            <header>
+                <h1 class="headline">A new Ice Age: How you can become a subzero cool peep and lead an exclusive lifestyle
+                </h1>
+                <img class="author-img" src="https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/361098/3dbb565c-6cd7-42db-9376-bfad8f9e6647.jpeg" alt="profile pic">
+                <div class="author-detail">
+                    <span class="author">Rob O'Leary</span>
+                    <button class="follow-btn">Follow</button>
+                        </div>
+                        <div>
+                            <span class="social"><a href="https://codepen.io/robjoeol/"><i class="fa fa-codepen"></i></a><span>
+                  <span class="social"><a href="https://github.com/robole/"><i class="fa fa-github"></i></span>
+                            <span class="social"><a href="#"><i class="fa fa-bookmark-o"></i></a></span>
+                        </div>
+                        <span class="publish-date">Apr. 16, 2020</span>
+                        <span class="reading-time">3 min read</span>
+                    </div>
+    </header>
+    <img src="https://dev-to-uploads.s3.amazonaws.com/i/3hj2gsz3ipnwo2sgeftg.jpg" alt="subzero cool peeps" />
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    <p>Something chiller killer here. Aliquip est reprehenderit officia laborum esse ea aute fugiat labore. Culpa enim labore culpa sit enim irure. Sunt elit voluptate mollit enim sunt aute consectetur. Officia fugiat occaecat sit minim consectetur officia
+        labore amet nisi do. Sint ad aliquip labore enim laboris occaecat sint sit id consequat nostrud velit anim laborum.</p>
+    </article>
+    <section class="recommended-articles">
+        <h2>Dont go! Read more articles from this author!</h2>
+        <ul>
+            <li>
+                <a href="" class="article-img">
+                    <img src="https://www.fillmurray.com/200/200" alt="story with bill murray">
+                </a>
+                <a href="" class="article-title">
+                    <h2>For the love of Bill</h2>
+                </a>
+                <span class="publish-date">Apr. 13, 2020</span>
+                <span class="reading-time">5min</span>
+
+            </li>
+            <li>
+                <a href="" class="article-img">
+                    <img src="https://baconmockup.com/200/200" alt="story with slab of bacon">
+                </a>
+                <a href="" class="article-title">
+                    <h2>Ham time with a friend of mine</h2>
+                </a>
+                <span class="publish-date">Apr. 11, 2020</span>
+                <span class="reading-time">4min</span>
+            </li>
+            <li>
+                <a href="" class="article-img">
+                    <img src="https://www.fillmurray.com/200/200" alt="story with random photo">
+                </a>
+                <a href="" class="article-title">
+                    <h2>Sailor, sailor, groundhog pie</h2>
+                </a>
+                <span class="publish-date">Apr. 1, 2020</span>
+                <span class="reading-time">15min</span>
+            </li>
+        </ul>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row-footer">
+                <div class="column-footer">
+                    <h3 class="footer__heading">made by</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Bùi Văn Hiếu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Đỗ Hải Nam</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Nguyễn Xuân Nguyên</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Phạm Hồng Quân</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="column-footer">
+                    <h3 class="footer__heading">Location</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 1, trụ sở chính: Tầng 6, toà C, 22 Thành Công, Hà Nội</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 2: Tầng 2, 29T1 Hoàng Đạo Thuý, Hà Nội</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 3: Tầng 6, 107 Nguyễn Phong Sắc, Hà Nội</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 4: Tầng 5, 71 Nguyễn Chí Thanh, Hà Nội (trụ sở chính)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column-footer">
+                    <h3 class="footer__heading">contact with us</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i  class="fab fa-facebook-square"></i> FaceBook</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fab fa-instagram"></i> Instagram</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link"><i class="fab fa-youtube"></i> Youtube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2020 - bản quyền thuộc về abcxyz </p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/583698486f.js" crossorigin="anonymous"></script>
+    <script src="article.js"></script>
+</body>
+
+</html>

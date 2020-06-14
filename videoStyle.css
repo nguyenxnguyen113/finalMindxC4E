@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.body {
+  margin-top: 70px;
+}
+.slide {
+  background-color: #4f4e52;
+  width: 100%;
+  display: flex;
+  height: 375px;
+  overflow: hidden;
+}
+.mySlides {
+  padding: 1%;
+  width: 25%;
+  height: auto;
+}
+.cursor {
+  cursor: pointer;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 11.5%;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: wheat;
+}
+
+#row {
+  display: flex;
+}
+.left {
+  width: 80%;
+}
+.left h3 {
+  margin-top: 20px;
+}
+
+.right {
+  width: 20%;
+  margin: 42px 0 0 10px;
+}
+.title {
+  margin: 0;
+  padding: 2px;
+  display: block;
+  width: 100%;
+  background-color: gray;
+  color: aliceblue;
+}
+.box {
+  background-color: #4f4e52;
+  overflow-y: scroll;
+  height: 453px;
+}
+.video-hot a {
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: solid 0.5px gray;
+}
+.video-hot a img {
+  width: 40%;
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.info p {
+  color: rgb(110, 207, 236);
+}
+#container-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 999;
+}
+.hop img {
+  width: 110px;
+  height: 200px;
+  margin: 10px 22px;
+}
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.video {
+  position: relative;
+  align-items: center;
+}
+.overlay {
+  bottom: 10px;
+  position: absolute;
+  width: 110px;
+  height: 30%;
+  z-index: 20;
+  opacity: 0.4;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  bottom: 10px;
+  position: absolute;
+  width: 110px;
+  height: 30%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hop p {
+  bottom: 10px;
+  position: absolute;
+  z-index: 300;
+  color: yellow;
+  text-align: center;
+}
+.hop {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  justify-content: center;
+}
+.hop img {
+  position: relative;
+  z-index: 1;
+}
+.cot {
+  display: flex;
+}
+.cot {
+  background-color: #4f4e52;
+  margin: 0 0;
+}
+.fa-trophy {
+  color: yellow;
+}
+
+.page {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.nextButton {
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  margin: 0 2px;
+}

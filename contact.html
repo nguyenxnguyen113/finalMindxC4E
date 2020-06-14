@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <ul class="top-nav__list-item">
+                            <li>
+                                <a href="index.html"><img src="./image/elephant.svg" alt=""></a>
+                            </li>
+                            <li><a href="videoIndex.html" onclick="move(-1)">Movie</a></li>
+                            <li><a href="./music/index.html" onclick="move(-1)">Music</a></li>
+                            <li><a href="./blog/index.html">Blog</a></li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <!-- <li class="top-nav__list-item"></li> -->
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="top-nav__search">
+                            <div class="container-input">
+                                <input id="search" placeholder="Search..">
+                                <ul class="result-search">
+                                </ul>
+                            </div>
+
+                            <button type="submit" onclick="ab()"><i class="fas fa-search"></i></ibutton>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="contact">
+  
+        <h1 class="section-header">CONTACT</h1>
+        
+        <div class="contact-wrapper">
+          
+            <!---------------- 
+      
+            CONTACT PAGE LEFT 
+          
+            -----------------> 
+          
+          <form class="form-horizontal" role="form" method="post" action="contact.php">
+             
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
+              </div>
+            </div>
+      
+            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
+            
+            <button class="btn btn-primary send-button" id="submit" type="reset" value="SEND">
+              <div class="button">
+                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+              </div>
+            
+            </button>
+
+                            </form>
+
+                            <!---------------- 
+      
+            CONTACT PAGE RIGHT 
+          
+            ----------------->
+
+                            <div class="direct-contact-container">
+
+                                <ul class="contact-list">
+                                    <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Seattle | WA</span></i></li>
+
+                                    <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+
+                                    <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
+
+                                </ul>
+
+                                <hr>
+                                <ul class="social-media-list">
+                                    <li>
+                                        <a href="#" target="_blank" class="contact-icon">
+                                            <i class="fa fa-github" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" class="contact-icon">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" class="contact-icon">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" class="contact-icon">
+                                            <i class="fa fa-codepen" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                                <hr>
+
+                                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+                            </div>
+
+                        </div>
+
+                        </section>
+
+
+
+                        <footer class="footer">
+                            <div class="container">
+                                <div class="row-footer">
+                                    <div class="column-footer">
+                                        <h3 class="footer__heading">Made by</h3>
+                                        <ul class="footer-list">
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link">Bùi Văn Hiếu</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link">Đỗ Hải Nam</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link">Nguyễn Xuân Nguyên</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link">Phạm Hồng Quân</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="column-footer">
+                                        <h3 class="footer__heading">Location</h3>
+                                        <ul class="footer-list">
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 1, trụ sở chính: Tầng 6, toà C, 22 Thành Công, Hà Nội</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 2: Tầng 2, 29T1 Hoàng Đạo Thuý, Hà Nội</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 3: Tầng 6, 107 Nguyễn Phong Sắc, Hà Nội</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fas fa-map-marker-alt"></i> Cơ sở 4: Tầng 5, 71 Nguyễn Chí Thanh, Hà Nội (trụ sở chính)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="column-footer">
+                                        <h3 class="footer__heading">Contact with us</h3>
+                                        <ul class="footer-list">
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i  class="fab fa-facebook-square"></i> FaceBook</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fab fa-instagram"></i> Instagram</a>
+                                            </li>
+                                            <li class="footer-item">
+                                                <a href="" class="footer-item__link"><i class="fab fa-youtube"></i> Youtube</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="copyright">
+                                <p>© 2020 - bản quyền thuộc về abcxyz </p>
+                            </div>
+                        </footer>
+                        <script src="https://kit.fontawesome.com/583698486f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
